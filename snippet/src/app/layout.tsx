@@ -17,20 +17,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        
+
       </head>
       <body className={inter.className}>
-        <header>
-          <div>Header</div>
+        <header className='h-12 w-full bg-indigo-100'>
+          <div>
+
+          </div>
         </header>
         <main>
-          <div>
+          <div className='container mx-auto px-20'>
             {children}  
           </div>
         </main>
-        <footer>
+        <footer className='h-12 w-full bg-indigo-700'>
           <div>
-            Footer
+            
           </div>
         </footer>        
       </body>
