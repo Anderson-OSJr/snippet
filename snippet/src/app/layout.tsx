@@ -20,9 +20,10 @@ export default function RootLayout({
 
       </head>
       <body className={inter.className}>
-        <header className='h-12 w-full bg-indigo-100'>
+        <header className=' h-20 w-full bg-indigo-50 flex flex-row
+                          justify-center items-center'>
           <div>
-
+            <h1 className='bold text-3xl text-indigo-700'>Code Snippets Control System - CSCS</h1>
           </div>
         </header>
         <main>
@@ -30,7 +31,7 @@ export default function RootLayout({
             {children}  
           </div>
         </main>
-        <footer className='h-12 w-full bg-indigo-700'>
+        <footer className='fixed bottom-0 h-32 w-full bg-indigo-500'>
           <div>
             
           </div>
