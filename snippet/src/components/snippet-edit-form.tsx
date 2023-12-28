@@ -17,6 +17,8 @@ export default function SnippetEditForm( {snippet}: SnippetEditFormProps ) {
         setCode(value);
     }
 
+    const editSnippetAction = actions.editSnippet.bind(null, snippet.id, code);
+
     return (
         <div className='my-10 border-indigo-200 border-8'>
             <Editor 
@@ -25,7 +27,14 @@ export default function SnippetEditForm( {snippet}: SnippetEditFormProps ) {
                 language='javascript'
                 defaultValue={snippet.code}
                 options={{minimap: {enabled: false}}}
-                onChange={handleEditorChange}/>
+                onChange={handleEditorChange}
+            />
+            <form action={editSnippetAction}>
+                <button type='submit' 
+                        className='p-2 border rounded
+                        bg-indigo-100 text-indigo-800
+                        m-2 w-28 border-indigo-400'>Save</button>
+            </form>
         </div>
     );
 }

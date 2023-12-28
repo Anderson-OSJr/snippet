@@ -13,7 +13,7 @@ export default async function SnippetEditPage(props: SnippetEditPageProps) {
         const id = parseInt(props.params.id);
 
         const snippet = await db.snippet.findFirst({
-            where: { id }
+            where: { id },
         });
 
         if (!snippet) {

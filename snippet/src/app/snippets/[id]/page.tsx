@@ -1,6 +1,7 @@
 import { db } from '@/db';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import * as actions from '@/actions';
 
 interface SnippetShowPageProps {
     params: {
@@ -11,7 +12,7 @@ interface SnippetShowPageProps {
 export default async function SnippetShowPage(props: SnippetShowPageProps) {
 
     /* To check if loading.tsx is running properly */
-    await new Promise((r) => setTimeout(r, 2000));
+    await new Promise((r) => setTimeout(r, 1000));
 
     const snippet = await db.snippet.findFirst({
         where: { id: parseInt(props.params.id) }
@@ -23,6 +24,8 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
     if (!snippet) {
         return notFound();
     }
+
+    const deleteSnippetAction = actions.deleteSnippet.bind(null, snippet.id);
 
     return(
         <div>
@@ -39,10 +42,11 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
                                         bg-indigo-50 text-indigo-700
                                         border-indigo-300'>Edit</Link>
 
-                    <Link   href=''
-                            className=' py-2 w-28 px-auto text-center border rounded
-                                        bg-indigo-50 text-indigo-700
-                                        border-indigo-300'>Delete</Link> 
+                    <form action={deleteSnippetAction}> 
+                        <button className=' py-2 w-28 px-auto text-center border rounded
+                                            bg-indigo-50 text-indigo-700
+                                            border-indigo-300'>Delete</button>                     
+                     </form>
 
                 </div> 
 

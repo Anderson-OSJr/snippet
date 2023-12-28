@@ -23,7 +23,7 @@ export default function RootLayout({
         <header className=' h-20 w-full bg-indigo-50 flex flex-row
                           justify-center items-center'>
           <div>
-            <h1 className='bold text-3xl text-indigo-700'>Code Snippets Control System - CSCS</h1>
+            <h1 className='bold text-3xl text-indigo-700'>Code Snippets Control System - CS&sup2;</h1>
           </div>
         </header>
         <main>
