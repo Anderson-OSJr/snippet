@@ -25,13 +25,13 @@ export default function SnippetCreatePage() {
     }
 
     return(
-        <>
+        <div className='w-2/5 mx-auto mt-20 flex flex-col'>
             <form action={createSnippet}>
 
-                <h3 className="font-bold m-3">Create a Snippet</h3>
+                <h3 className="font-bold text-2xl text-indigo-800 my-3">Create a Snippet</h3>
 
-                <div className="flex flex-col gap-4 m-3">
-                    <div className="flex gap-4">
+                <div className="flex flex-col">
+                    <div className="flex gap-4 my-3">
                         <label  htmlFor="title" className="w-12">
                             Title
                         </label>
@@ -43,8 +43,8 @@ export default function SnippetCreatePage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-4 m-3">
-                    <div className="flex gap-4">
+                <div className="flex flex-col gap-4">
+                    <div className="flex gap-4 my-3">
                         <label  htmlFor="code" className="w-12">
                             Code
                         </label>
@@ -56,10 +56,12 @@ export default function SnippetCreatePage() {
                     </div>
                 </div>
 
-                <button type="submit" className="rounded p-2 bg-indigo-200 m-3">
+                <button type="submit" 
+                        className="rounded p-2 my-3 border bg-indigo-100
+                                 border-indigo-400 text-indigo-800">
                     Create Snippet
                 </button>
             </form>
-        </>
+        </div>
     )
 }

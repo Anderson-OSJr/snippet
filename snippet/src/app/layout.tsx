@@ -23,11 +23,11 @@ export default function RootLayout({
         <header className=' h-20 w-full bg-indigo-50 flex flex-row
                           justify-center items-center'>
           <div>
-            <h1 className='bold text-3xl text-indigo-700'>Code Snippets Control System - CS&sup2;</h1>
+            <h1 className='bold lg:text-3xl md:text-xl text-indigo-700'>Code Snippets Control System - CS&sup2;</h1>
           </div>
         </header>
         <main>
-          <div className='container mx-auto px-20'>
+          <div className='container mx-auto lg:px-20 px-2'>
             {children}  
           </div>
         </main>
