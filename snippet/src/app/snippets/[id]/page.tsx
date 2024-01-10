@@ -17,6 +17,7 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
         where: { id: parseInt(props.params.id) }
     });  
 
+
     if (!snippet) {
         return notFound();
     }
